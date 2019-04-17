@@ -643,70 +643,70 @@ class CPU {
             LDrr_al: function() { this._r.a=this._r.l; this._r.m=1; this._r.t=4; },
             LDrr_aa: function() { this._r.a=this._r.a; this._r.m=1; this._r.t=4; },
 
-            LDrHLm_b: function() { this._r.b=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_c: function() { this._r.c=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_d: function() { this._r.d=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_e: function() { this._r.e=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_h: function() { this._r.h=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_l: function() { this._r.l=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
-            LDrHLm_a: function() { this._r.a=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_b: function() { this._r.b=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_c: function() { this._r.c=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_d: function() { this._r.d=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_e: function() { this._r.e=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_h: function() { this._r.h=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_l: function() { this._r.l=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
+            LDrHLm_a: function() { this._r.a=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.m=2; this._r.t=8; },
 
-            LDHLmr_b: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.b); this._r.m=2; this._r.t=8; },
-            LDHLmr_c: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.c); this._r.m=2; this._r.t=8; },
-            LDHLmr_d: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.d); this._r.m=2; this._r.t=8; },
-            LDHLmr_e: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.e); this._r.m=2; this._r.t=8; },
-            LDHLmr_h: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.h); this._r.m=2; this._r.t=8; },
-            LDHLmr_l: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.l); this._r.m=2; this._r.t=8; },
-            LDHLmr_a: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l,this._r.a); this._r.m=2; this._r.t=8; },
+            LDHLmr_b: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.b); this._r.m=2; this._r.t=8; },
+            LDHLmr_c: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.c); this._r.m=2; this._r.t=8; },
+            LDHLmr_d: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.d); this._r.m=2; this._r.t=8; },
+            LDHLmr_e: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.e); this._r.m=2; this._r.t=8; },
+            LDHLmr_h: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.h); this._r.m=2; this._r.t=8; },
+            LDHLmr_l: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.l); this._r.m=2; this._r.t=8; },
+            LDHLmr_a: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,this._r.a); this._r.m=2; this._r.t=8; },
 
-            LDrn_b: function() { this._r.b=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_c: function() { this._r.c=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_d: function() { this._r.d=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_e: function() { this._r.e=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_h: function() { this._r.h=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_l: function() { this._r.l=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
-            LDrn_a: function() { this._r.a=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_b: function() { this._r.b=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_c: function() { this._r.c=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_d: function() { this._r.d=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_e: function() { this._r.e=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_h: function() { this._r.h=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_l: function() { this._r.l=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
+            LDrn_a: function() { this._r.a=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.m=2; this._r.t=8; },
 
-            LDHLmn: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l, MemoryInterfacing.rb(this._r.pc)); this._r.pc++; this._r.m=3; this._r.t=12; },
+            LDHLmn: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l, MemoryInterfacing.instance().rb(this._r.pc)); this._r.pc++; this._r.m=3; this._r.t=12; },
 
-            LDBCmA: function() { MemoryInterfacing.wb((this._r.b<<8)+this._r.c, this._r.a); this._r.m=2; this._r.t=8; },
-            LDDEmA: function() { MemoryInterfacing.wb((this._r.d<<8)+this._r.e, this._r.a); this._r.m=2; this._r.t=8; },
+            LDBCmA: function() { MemoryInterfacing.instance().wb((this._r.b<<8)+this._r.c, this._r.a); this._r.m=2; this._r.t=8; },
+            LDDEmA: function() { MemoryInterfacing.instance().wb((this._r.d<<8)+this._r.e, this._r.a); this._r.m=2; this._r.t=8; },
 
-            LDmmA: function() { MemoryInterfacing.wb(MemoryInterfacing.rw(this._r.pc), this._r.a); this._r.pc+=2; this._r.m=4; this._r.t=16; },
+            LDmmA: function() { MemoryInterfacing.instance().wb(MemoryInterfacing.instance().rw(this._r.pc), this._r.a); this._r.pc+=2; this._r.m=4; this._r.t=16; },
 
-            LDABCm: function() { this._r.a=MemoryInterfacing.rb((this._r.b<<8)+this._r.c); this._r.m=2; this._r.t=8; },
-            LDADEm: function() { this._r.a=MemoryInterfacing.rb((this._r.d<<8)+this._r.e); this._r.m=2; this._r.t=8; },
+            LDABCm: function() { this._r.a=MemoryInterfacing.instance().rb((this._r.b<<8)+this._r.c); this._r.m=2; this._r.t=8; },
+            LDADEm: function() { this._r.a=MemoryInterfacing.instance().rb((this._r.d<<8)+this._r.e); this._r.m=2; this._r.t=8; },
 
-            LDAmm: function() { this._r.a=MemoryInterfacing.rb(MemoryInterfacing.rw(this._r.pc)); this._r.pc+=2; this._r.m=4; this._r.t=16; },
+            LDAmm: function() { this._r.a=MemoryInterfacing.instance().rb(MemoryInterfacing.instance().rw(this._r.pc)); this._r.pc+=2; this._r.m=4; this._r.t=16; },
 
-            LDBCnn: function() { this._r.c=MemoryInterfacing.rb(this._r.pc); this._r.b=MemoryInterfacing.rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
-            LDDEnn: function() { this._r.e=MemoryInterfacing.rb(this._r.pc); this._r.d=MemoryInterfacing.rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
-            LDHLnn: function() { this._r.l=MemoryInterfacing.rb(this._r.pc); this._r.h=MemoryInterfacing.rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
-            LDSPnn: function() { this._r.sp=MemoryInterfacing.rw(this._r.pc); this._r.pc+=2; this._r.m=3; this._r.t=12; },
+            LDBCnn: function() { this._r.c=MemoryInterfacing.instance().rb(this._r.pc); this._r.b=MemoryInterfacing.instance().rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
+            LDDEnn: function() { this._r.e=MemoryInterfacing.instance().rb(this._r.pc); this._r.d=MemoryInterfacing.instance().rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
+            LDHLnn: function() { this._r.l=MemoryInterfacing.instance().rb(this._r.pc); this._r.h=MemoryInterfacing.instance().rb(this._r.pc+1); this._r.pc+=2; this._r.m=3; this._r.t=12; },
+            LDSPnn: function() { this._r.sp=MemoryInterfacing.instance().rw(this._r.pc); this._r.pc+=2; this._r.m=3; this._r.t=12; },
 
-            LDHLmm: function() { let i=MemoryInterfacing.rw(this._r.pc); this._r.pc+=2; this._r.l=MemoryInterfacing.rb(i); this._r.h=MemoryInterfacing.rb(i+1); this._r.m=5; this._r.t=20; },
-            LDmmHL: function() { let i=MemoryInterfacing.rw(this._r.pc); this._r.pc+=2; MemoryInterfacing.ww(i,(this._r.h<<8)+this._r.l); this._r.m=5; this._r.t=20; },
+            LDHLmm: function() { let i=MemoryInterfacing.instance().rw(this._r.pc); this._r.pc+=2; this._r.l=MemoryInterfacing.instance().rb(i); this._r.h=MemoryInterfacing.instance().rb(i+1); this._r.m=5; this._r.t=20; },
+            LDmmHL: function() { let i=MemoryInterfacing.instance().rw(this._r.pc); this._r.pc+=2; MemoryInterfacing.instance().ww(i,(this._r.h<<8)+this._r.l); this._r.m=5; this._r.t=20; },
 
-            LDHLIA: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l, this._r.a); this._r.l=(this._r.l+1)&255; if(!this._r.l) this._r.h=(this._r.h+1)&255; this._r.m=2; this._r.t=8; },
-            LDAHLI: function() { this._r.a=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.l=(this._r.l+1)&255; if(!this._r.l) this._r.h=(this._r.h+1)&255; this._r.m=2; this._r.t=8; },
+            LDHLIA: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l, this._r.a); this._r.l=(this._r.l+1)&255; if(!this._r.l) this._r.h=(this._r.h+1)&255; this._r.m=2; this._r.t=8; },
+            LDAHLI: function() { this._r.a=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.l=(this._r.l+1)&255; if(!this._r.l) this._r.h=(this._r.h+1)&255; this._r.m=2; this._r.t=8; },
 
-            LDHLDA: function() { MemoryInterfacing.wb((this._r.h<<8)+this._r.l, this._r.a); this._r.l=(this._r.l-1)&255; if(this._r.l==255) this._r.h=(this._r.h-1)&255; this._r.m=2; this._r.t=8; },
-            LDAHLD: function() { this._r.a=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.l=(this._r.l-1)&255; if(this._r.l==255) this._r.h=(this._r.h-1)&255; this._r.m=2; this._r.t=8; },
+            LDHLDA: function() { MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l, this._r.a); this._r.l=(this._r.l-1)&255; if(this._r.l==255) this._r.h=(this._r.h-1)&255; this._r.m=2; this._r.t=8; },
+            LDAHLD: function() { this._r.a=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.l=(this._r.l-1)&255; if(this._r.l==255) this._r.h=(this._r.h-1)&255; this._r.m=2; this._r.t=8; },
 
-            LDAIOn: function() { this._r.a=MemoryInterfacing.rb(0xFF00+MemoryInterfacing.rb(this._r.pc)); this._r.pc++; this._r.m=3; this._r.t=12; },
-            LDIOnA: function() { MemoryInterfacing.wb(0xFF00+MemoryInterfacing.rb(this._r.pc),this._r.a); this._r.pc++; this._r.m=3; this._r.t=12; },
-            LDAIOC: function() { this._r.a=MemoryInterfacing.rb(0xFF00+this._r.c); this._r.m=2; this._r.t=8; },
-            LDIOCA: function() { MemoryInterfacing.wb(0xFF00+this._r.c,this._r.a); this._r.m=2; this._r.t=8; },
+            LDAIOn: function() { this._r.a=MemoryInterfacing.instance().rb(0xFF00+MemoryInterfacing.instance().rb(this._r.pc)); this._r.pc++; this._r.m=3; this._r.t=12; },
+            LDIOnA: function() { MemoryInterfacing.instance().wb(0xFF00+MemoryInterfacing.instance().rb(this._r.pc),this._r.a); this._r.pc++; this._r.m=3; this._r.t=12; },
+            LDAIOC: function() { this._r.a=MemoryInterfacing.instance().rb(0xFF00+this._r.c); this._r.m=2; this._r.t=8; },
+            LDIOCA: function() { MemoryInterfacing.instance().wb(0xFF00+this._r.c,this._r.a); this._r.m=2; this._r.t=8; },
 
-            LDHLSPn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; i+=this._r.sp; this._r.h=(i>>8)&255; this._r.l=i&255; this._r.m=3; this._r.t=12; },
+            LDHLSPn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; i+=this._r.sp; this._r.h=(i>>8)&255; this._r.l=i&255; this._r.m=3; this._r.t=12; },
 
-            SWAPr_b: function() { let tr=this._r.b; this._r.b=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_c: function() { let tr=this._r.c; this._r.c=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_d: function() { let tr=this._r.d; this._r.d=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_e: function() { let tr=this._r.e; this._r.e=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_h: function() { let tr=this._r.h; this._r.h=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_l: function() { let tr=this._r.l; this._r.l=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
-            SWAPr_a: function() { let tr=this._r.a; this._r.a=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_b: function() { let tr=this._r.b; this._r.b=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_c: function() { let tr=this._r.c; this._r.c=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_d: function() { let tr=this._r.d; this._r.d=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_e: function() { let tr=this._r.e; this._r.e=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_h: function() { let tr=this._r.h; this._r.h=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_l: function() { let tr=this._r.l; this._r.l=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
+            SWAPr_a: function() { let tr=this._r.a; this._r.a=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,tr); this._r.m=4; this._r.t=16; },
 
             /*--- Data processing ---*/
             ADDr_b: function() { this._r.a+=this._r.b; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
@@ -716,13 +716,13 @@ class CPU {
             ADDr_h: function() { this._r.a+=this._r.h; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             ADDr_l: function() { this._r.a+=this._r.l; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             ADDr_a: function() { this._r.a+=this._r.a; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
-            ADDHL: function() { this._r.a+=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
-            ADDn: function() { this._r.a+=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            ADDHL: function() { this._r.a+=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            ADDn: function() { this._r.a+=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
             ADDHLBC: function() { let hl=(this._r.h<<8)+this._r.l; hl+=(this._r.b<<8)+this._r.c; if(hl>65535) this._r.f|=0x10; else this._r.f&=0xEF; this._r.h=(hl>>8)&255; this._r.l=hl&255; this._r.m=3; this._r.t=12; },
             ADDHLDE: function() { let hl=(this._r.h<<8)+this._r.l; hl+=(this._r.d<<8)+this._r.e; if(hl>65535) this._r.f|=0x10; else this._r.f&=0xEF; this._r.h=(hl>>8)&255; this._r.l=hl&255; this._r.m=3; this._r.t=12; },
             ADDHLHL: function() { let hl=(this._r.h<<8)+this._r.l; hl+=(this._r.h<<8)+this._r.l; if(hl>65535) this._r.f|=0x10; else this._r.f&=0xEF; this._r.h=(hl>>8)&255; this._r.l=hl&255; this._r.m=3; this._r.t=12; },
             ADDHLSP: function() { let hl=(this._r.h<<8)+this._r.l; hl+=this._r.sp; if(hl>65535) this._r.f|=0x10; else this._r.f&=0xEF; this._r.h=(hl>>8)&255; this._r.l=hl&255; this._r.m=3; this._r.t=12; },
-            ADDSPn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.sp+=i; this._r.m=4; this._r.t=16; },
+            ADDSPn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.sp+=i; this._r.m=4; this._r.t=16; },
 
             ADCr_b: function() { this._r.a+=this._r.b; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             ADCr_c: function() { this._r.a+=this._r.c; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
@@ -731,8 +731,8 @@ class CPU {
             ADCr_h: function() { this._r.a+=this._r.h; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             ADCr_l: function() { this._r.a+=this._r.l; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             ADCr_a: function() { this._r.a+=this._r.a; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
-            ADCHL: function() { this._r.a+=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
-            ADCn: function() { this._r.a+=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            ADCHL: function() { this._r.a+=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            ADCn: function() { this._r.a+=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.a+=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a); if(this._r.a>255) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
 
             SUBr_b: function() { this._r.a-=this._r.b; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SUBr_c: function() { this._r.a-=this._r.c; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
@@ -741,8 +741,8 @@ class CPU {
             SUBr_h: function() { this._r.a-=this._r.h; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SUBr_l: function() { this._r.a-=this._r.l; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SUBr_a: function() { this._r.a-=this._r.a; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
-            SUBHL: function() { this._r.a-=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
-            SUBn: function() { this._r.a-=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            SUBHL: function() { this._r.a-=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            SUBn: function() { this._r.a-=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
 
             SBCr_b: function() { this._r.a-=this._r.b; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SBCr_c: function() { this._r.a-=this._r.c; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
@@ -751,8 +751,8 @@ class CPU {
             SBCr_h: function() { this._r.a-=this._r.h; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SBCr_l: function() { this._r.a-=this._r.l; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
             SBCr_a: function() { this._r.a-=this._r.a; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=1; this._r.t=4; },
-            SBCHL: function() { this._r.a-=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
-            SBCn: function() { this._r.a-=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            SBCHL: function() { this._r.a-=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
+            SBCn: function() { this._r.a-=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.a-=(this._r.f&0x10)?1:0; this._ops.fz(this._r.a,1); if(this._r.a<0) this._r.f|=0x10; this._r.a&=255; this._r.m=2; this._r.t=8; },
 
             CPr_b: function() { let i=this._r.a; i-=this._r.b; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=1; this._r.t=4; },
             CPr_c: function() { let i=this._r.a; i-=this._r.c; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=1; this._r.t=4; },
@@ -761,8 +761,8 @@ class CPU {
             CPr_h: function() { let i=this._r.a; i-=this._r.h; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=1; this._r.t=4; },
             CPr_l: function() { let i=this._r.a; i-=this._r.l; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=1; this._r.t=4; },
             CPr_a: function() { let i=this._r.a; i-=this._r.a; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=1; this._r.t=4; },
-            CPHL: function() { let i=this._r.a; i-=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=2; this._r.t=8; },
-            CPn: function() { let i=this._r.a; i-=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=2; this._r.t=8; },
+            CPHL: function() { let i=this._r.a; i-=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=2; this._r.t=8; },
+            CPn: function() { let i=this._r.a; i-=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._ops.fz(i,1); if(i<0) this._r.f|=0x10; i&=255; this._r.m=2; this._r.t=8; },
 
             ANDr_b: function() { this._r.a&=this._r.b; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ANDr_c: function() { this._r.a&=this._r.c; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
@@ -771,8 +771,8 @@ class CPU {
             ANDr_h: function() { this._r.a&=this._r.h; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ANDr_l: function() { this._r.a&=this._r.l; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ANDr_a: function() { this._r.a&=this._r.a; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
-            ANDHL: function() { this._r.a&=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
-            ANDn: function() { this._r.a&=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            ANDHL: function() { this._r.a&=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            ANDn: function() { this._r.a&=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
 
             ORr_b: function() { this._r.a|=this._r.b; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ORr_c: function() { this._r.a|=this._r.c; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
@@ -781,8 +781,8 @@ class CPU {
             ORr_h: function() { this._r.a|=this._r.h; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ORr_l: function() { this._r.a|=this._r.l; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             ORr_a: function() { this._r.a|=this._r.a; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
-            ORHL: function() { this._r.a|=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
-            ORn: function() { this._r.a|=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            ORHL: function() { this._r.a|=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            ORn: function() { this._r.a|=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
 
             XORr_b: function() { this._r.a^=this._r.b; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             XORr_c: function() { this._r.a^=this._r.c; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
@@ -791,8 +791,8 @@ class CPU {
             XORr_h: function() { this._r.a^=this._r.h; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             XORr_l: function() { this._r.a^=this._r.l; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
             XORr_a: function() { this._r.a^=this._r.a; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
-            XORHL: function() { this._r.a^=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
-            XORn: function() { this._r.a^=MemoryInterfacing.rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            XORHL: function() { this._r.a^=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
+            XORn: function() { this._r.a^=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=2; this._r.t=8; },
 
             INCr_b: function() { this._r.b++; this._r.b&=255; this._ops.fz(this._r.b); this._r.m=1; this._r.t=4; },
             INCr_c: function() { this._r.c++; this._r.c&=255; this._ops.fz(this._r.c); this._r.m=1; this._r.t=4; },
@@ -801,7 +801,7 @@ class CPU {
             INCr_h: function() { this._r.h++; this._r.h&=255; this._ops.fz(this._r.h); this._r.m=1; this._r.t=4; },
             INCr_l: function() { this._r.l++; this._r.l&=255; this._ops.fz(this._r.l); this._r.m=1; this._r.t=4; },
             INCr_a: function() { this._r.a++; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
-            INCHLm: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l)+1; i&=255; MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.m=3; this._r.t=12; },
+            INCHLm: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)+1; i&=255; MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.m=3; this._r.t=12; },
 
             DECr_b: function() { this._r.b--; this._r.b&=255; this._ops.fz(this._r.b); this._r.m=1; this._r.t=4; },
             DECr_c: function() { this._r.c--; this._r.c&=255; this._ops.fz(this._r.c); this._r.m=1; this._r.t=4; },
@@ -810,7 +810,7 @@ class CPU {
             DECr_h: function() { this._r.h--; this._r.h&=255; this._ops.fz(this._r.h); this._r.m=1; this._r.t=4; },
             DECr_l: function() { this._r.l--; this._r.l&=255; this._ops.fz(this._r.l); this._r.m=1; this._r.t=4; },
             DECr_a: function() { this._r.a--; this._r.a&=255; this._ops.fz(this._r.a); this._r.m=1; this._r.t=4; },
-            DECHLm: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l)-1; i&=255; MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.m=3; this._r.t=12; },
+            DECHLm: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)-1; i&=255; MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.m=3; this._r.t=12; },
 
             INCBC: function() { this._r.c=(this._r.c+1)&255; if(!this._r.c) this._r.b=(this._r.b+1)&255; this._r.m=1; this._r.t=4; },
             INCDE: function() { this._r.e=(this._r.e+1)&255; if(!this._r.e) this._r.d=(this._r.d+1)&255; this._r.m=1; this._r.t=4; },
@@ -830,7 +830,7 @@ class CPU {
             BIT0h: function() { this._ops.fz(this._r.h&0x01); this._r.m=2; this._r.t=8; },
             BIT0l: function() { this._ops.fz(this._r.l&0x01); this._r.m=2; this._r.t=8; },
             BIT0a: function() { this._ops.fz(this._r.a&0x01); this._r.m=2; this._r.t=8; },
-            BIT0m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x01); this._r.m=3; this._r.t=12; },
+            BIT0m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x01); this._r.m=3; this._r.t=12; },
 
             BIT1b: function() { this._ops.fz(this._r.b&0x02); this._r.m=2; this._r.t=8; },
             BIT1c: function() { this._ops.fz(this._r.c&0x02); this._r.m=2; this._r.t=8; },
@@ -839,7 +839,7 @@ class CPU {
             BIT1h: function() { this._ops.fz(this._r.h&0x02); this._r.m=2; this._r.t=8; },
             BIT1l: function() { this._ops.fz(this._r.l&0x02); this._r.m=2; this._r.t=8; },
             BIT1a: function() { this._ops.fz(this._r.a&0x02); this._r.m=2; this._r.t=8; },
-            BIT1m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x02); this._r.m=3; this._r.t=12; },
+            BIT1m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x02); this._r.m=3; this._r.t=12; },
 
             BIT2b: function() { this._ops.fz(this._r.b&0x04); this._r.m=2; this._r.t=8; },
             BIT2c: function() { this._ops.fz(this._r.c&0x04); this._r.m=2; this._r.t=8; },
@@ -848,7 +848,7 @@ class CPU {
             BIT2h: function() { this._ops.fz(this._r.h&0x04); this._r.m=2; this._r.t=8; },
             BIT2l: function() { this._ops.fz(this._r.l&0x04); this._r.m=2; this._r.t=8; },
             BIT2a: function() { this._ops.fz(this._r.a&0x04); this._r.m=2; this._r.t=8; },
-            BIT2m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x04); this._r.m=3; this._r.t=12; },
+            BIT2m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x04); this._r.m=3; this._r.t=12; },
 
             BIT3b: function() { this._ops.fz(this._r.b&0x08); this._r.m=2; this._r.t=8; },
             BIT3c: function() { this._ops.fz(this._r.c&0x08); this._r.m=2; this._r.t=8; },
@@ -857,7 +857,7 @@ class CPU {
             BIT3h: function() { this._ops.fz(this._r.h&0x08); this._r.m=2; this._r.t=8; },
             BIT3l: function() { this._ops.fz(this._r.l&0x08); this._r.m=2; this._r.t=8; },
             BIT3a: function() { this._ops.fz(this._r.a&0x08); this._r.m=2; this._r.t=8; },
-            BIT3m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x08); this._r.m=3; this._r.t=12; },
+            BIT3m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x08); this._r.m=3; this._r.t=12; },
 
             BIT4b: function() { this._ops.fz(this._r.b&0x10); this._r.m=2; this._r.t=8; },
             BIT4c: function() { this._ops.fz(this._r.c&0x10); this._r.m=2; this._r.t=8; },
@@ -866,7 +866,7 @@ class CPU {
             BIT4h: function() { this._ops.fz(this._r.h&0x10); this._r.m=2; this._r.t=8; },
             BIT4l: function() { this._ops.fz(this._r.l&0x10); this._r.m=2; this._r.t=8; },
             BIT4a: function() { this._ops.fz(this._r.a&0x10); this._r.m=2; this._r.t=8; },
-            BIT4m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x10); this._r.m=3; this._r.t=12; },
+            BIT4m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x10); this._r.m=3; this._r.t=12; },
 
             BIT5b: function() { this._ops.fz(this._r.b&0x20); this._r.m=2; this._r.t=8; },
             BIT5c: function() { this._ops.fz(this._r.c&0x20); this._r.m=2; this._r.t=8; },
@@ -875,7 +875,7 @@ class CPU {
             BIT5h: function() { this._ops.fz(this._r.h&0x20); this._r.m=2; this._r.t=8; },
             BIT5l: function() { this._ops.fz(this._r.l&0x20); this._r.m=2; this._r.t=8; },
             BIT5a: function() { this._ops.fz(this._r.a&0x20); this._r.m=2; this._r.t=8; },
-            BIT5m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x20); this._r.m=3; this._r.t=12; },
+            BIT5m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x20); this._r.m=3; this._r.t=12; },
 
             BIT6b: function() { this._ops.fz(this._r.b&0x40); this._r.m=2; this._r.t=8; },
             BIT6c: function() { this._ops.fz(this._r.c&0x40); this._r.m=2; this._r.t=8; },
@@ -884,7 +884,7 @@ class CPU {
             BIT6h: function() { this._ops.fz(this._r.h&0x40); this._r.m=2; this._r.t=8; },
             BIT6l: function() { this._ops.fz(this._r.l&0x40); this._r.m=2; this._r.t=8; },
             BIT6a: function() { this._ops.fz(this._r.a&0x40); this._r.m=2; this._r.t=8; },
-            BIT6m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x40); this._r.m=3; this._r.t=12; },
+            BIT6m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x40); this._r.m=3; this._r.t=12; },
 
             BIT7b: function() { this._ops.fz(this._r.b&0x80); this._r.m=2; this._r.t=8; },
             BIT7c: function() { this._ops.fz(this._r.c&0x80); this._r.m=2; this._r.t=8; },
@@ -893,7 +893,7 @@ class CPU {
             BIT7h: function() { this._ops.fz(this._r.h&0x80); this._r.m=2; this._r.t=8; },
             BIT7l: function() { this._ops.fz(this._r.l&0x80); this._r.m=2; this._r.t=8; },
             BIT7a: function() { this._ops.fz(this._r.a&0x80); this._r.m=2; this._r.t=8; },
-            BIT7m: function() { this._ops.fz(MemoryInterfacing.rb((this._r.h<<8)+this._r.l)&0x80); this._r.m=3; this._r.t=12; },
+            BIT7m: function() { this._ops.fz(MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l)&0x80); this._r.m=3; this._r.t=12; },
 
             RLA: function() { let ci=this._r.f&0x10?1:0; let co=this._r.a&0x80?0x10:0; this._r.a=(this._r.a<<1)+ci; this._r.a&=255; this._r.f=(this._r.f&0xEF)+co; this._r.m=1; this._r.t=4; },
             RLCA: function() { let ci=this._r.a&0x80?1:0; let co=this._r.a&0x80?0x10:0; this._r.a=(this._r.a<<1)+ci; this._r.a&=255; this._r.f=(this._r.f&0xEF)+co; this._r.m=1; this._r.t=4; },
@@ -907,7 +907,7 @@ class CPU {
             RLr_h: function() { let ci=this._r.f&0x10?1:0; let co=this._r.h&0x80?0x10:0; this._r.h=(this._r.h<<1)+ci; this._r.h&=255; this._ops.fz(this._r.h); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RLr_l: function() { let ci=this._r.f&0x10?1:0; let co=this._r.l&0x80?0x10:0; this._r.l=(this._r.l<<1)+ci; this._r.l&=255; this._ops.fz(this._r.l); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RLr_a: function() { let ci=this._r.f&0x10?1:0; let co=this._r.a&0x80?0x10:0; this._r.a=(this._r.a<<1)+ci; this._r.a&=255; this._ops.fz(this._r.a); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
-            RLHL: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); let ci=this._r.f&0x10?1:0; let co=i&0x80?0x10:0; i=(i<<1)+ci; i&=255; this._ops.fz(i); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
+            RLHL: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); let ci=this._r.f&0x10?1:0; let co=i&0x80?0x10:0; i=(i<<1)+ci; i&=255; this._ops.fz(i); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
 
             RLCr_b: function() { let ci=this._r.b&0x80?1:0; let co=this._r.b&0x80?0x10:0; this._r.b=(this._r.b<<1)+ci; this._r.b&=255; this._ops.fz(this._r.b); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RLCr_c: function() { let ci=this._r.c&0x80?1:0; let co=this._r.c&0x80?0x10:0; this._r.c=(this._r.c<<1)+ci; this._r.c&=255; this._ops.fz(this._r.c); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
@@ -916,7 +916,7 @@ class CPU {
             RLCr_h: function() { let ci=this._r.h&0x80?1:0; let co=this._r.h&0x80?0x10:0; this._r.h=(this._r.h<<1)+ci; this._r.h&=255; this._ops.fz(this._r.h); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RLCr_l: function() { let ci=this._r.l&0x80?1:0; let co=this._r.l&0x80?0x10:0; this._r.l=(this._r.l<<1)+ci; this._r.l&=255; this._ops.fz(this._r.l); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RLCr_a: function() { let ci=this._r.a&0x80?1:0; let co=this._r.a&0x80?0x10:0; this._r.a=(this._r.a<<1)+ci; this._r.a&=255; this._ops.fz(this._r.a); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
-            RLCHL: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); let ci=i&0x80?1:0; let co=i&0x80?0x10:0; i=(i<<1)+ci; i&=255; this._ops.fz(i); MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
+            RLCHL: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); let ci=i&0x80?1:0; let co=i&0x80?0x10:0; i=(i<<1)+ci; i&=255; this._ops.fz(i); MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
 
             RRr_b: function() { let ci=this._r.f&0x10?0x80:0; let co=this._r.b&1?0x10:0; this._r.b=(this._r.b>>1)+ci; this._r.b&=255; this._ops.fz(this._r.b); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRr_c: function() { let ci=this._r.f&0x10?0x80:0; let co=this._r.c&1?0x10:0; this._r.c=(this._r.c>>1)+ci; this._r.c&=255; this._ops.fz(this._r.c); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
@@ -925,7 +925,7 @@ class CPU {
             RRr_h: function() { let ci=this._r.f&0x10?0x80:0; let co=this._r.h&1?0x10:0; this._r.h=(this._r.h>>1)+ci; this._r.h&=255; this._ops.fz(this._r.h); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRr_l: function() { let ci=this._r.f&0x10?0x80:0; let co=this._r.l&1?0x10:0; this._r.l=(this._r.l>>1)+ci; this._r.l&=255; this._ops.fz(this._r.l); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRr_a: function() { let ci=this._r.f&0x10?0x80:0; let co=this._r.a&1?0x10:0; this._r.a=(this._r.a>>1)+ci; this._r.a&=255; this._ops.fz(this._r.a); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
-            RRHL: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); let ci=this._r.f&0x10?0x80:0; let co=i&1?0x10:0; i=(i>>1)+ci; i&=255; MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
+            RRHL: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); let ci=this._r.f&0x10?0x80:0; let co=i&1?0x10:0; i=(i>>1)+ci; i&=255; MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
 
             RRCr_b: function() { let ci=this._r.b&1?0x80:0; let co=this._r.b&1?0x10:0; this._r.b=(this._r.b>>1)+ci; this._r.b&=255; this._ops.fz(this._r.b); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRCr_c: function() { let ci=this._r.c&1?0x80:0; let co=this._r.c&1?0x10:0; this._r.c=(this._r.c>>1)+ci; this._r.c&=255; this._ops.fz(this._r.c); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
@@ -934,7 +934,7 @@ class CPU {
             RRCr_h: function() { let ci=this._r.h&1?0x80:0; let co=this._r.h&1?0x10:0; this._r.h=(this._r.h>>1)+ci; this._r.h&=255; this._ops.fz(this._r.h); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRCr_l: function() { let ci=this._r.l&1?0x80:0; let co=this._r.l&1?0x10:0; this._r.l=(this._r.l>>1)+ci; this._r.l&=255; this._ops.fz(this._r.l); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             RRCr_a: function() { let ci=this._r.a&1?0x80:0; let co=this._r.a&1?0x10:0; this._r.a=(this._r.a>>1)+ci; this._r.a&=255; this._ops.fz(this._r.a); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
-            RRCHL: function() { let i=MemoryInterfacing.rb((this._r.h<<8)+this._r.l); let ci=i&1?0x80:0; let co=i&1?0x10:0; i=(i>>1)+ci; i&=255; MemoryInterfacing.wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
+            RRCHL: function() { let i=MemoryInterfacing.instance().rb((this._r.h<<8)+this._r.l); let ci=i&1?0x80:0; let co=i&1?0x10:0; i=(i>>1)+ci; i&=255; MemoryInterfacing.instance().wb((this._r.h<<8)+this._r.l,i); this._ops.fz(i); this._r.f=(this._r.f&0xEF)+co; this._r.m=4; this._r.t=16; },
 
             SLAr_b: function() { let co=this._r.b&0x80?0x10:0; this._r.b=(this._r.b<<1)&255; this._ops.fz(this._r.b); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
             SLAr_c: function() { let co=this._r.c&0x80?0x10:0; this._r.c=(this._r.c<<1)&255; this._ops.fz(this._r.c); this._r.f=(this._r.f&0xEF)+co; this._r.m=2; this._r.t=8; },
@@ -975,58 +975,58 @@ class CPU {
             SCF: function() { this._r.f|=0x10; this._r.m=1; this._r.t=4; },
 
             /*--- Stack ---*/
-            PUSHBC: function() { this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.b); this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.c); this._r.m=3; this._r.t=12; },
-            PUSHDE: function() { this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.d); this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.e); this._r.m=3; this._r.t=12; },
-            PUSHHL: function() { this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.h); this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.l); this._r.m=3; this._r.t=12; },
-            PUSHAF: function() { this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.a); this._r.sp--; MemoryInterfacing.wb(this._r.sp,this._r.f); this._r.m=3; this._r.t=12; },
+            PUSHBC: function() { this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.b); this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.c); this._r.m=3; this._r.t=12; },
+            PUSHDE: function() { this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.d); this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.e); this._r.m=3; this._r.t=12; },
+            PUSHHL: function() { this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.h); this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.l); this._r.m=3; this._r.t=12; },
+            PUSHAF: function() { this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.a); this._r.sp--; MemoryInterfacing.instance().wb(this._r.sp,this._r.f); this._r.m=3; this._r.t=12; },
 
-            POPBC: function() { this._r.c=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.b=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
-            POPDE: function() { this._r.e=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.d=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
-            POPHL: function() { this._r.l=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.h=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
-            POPAF: function() { this._r.f=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.a=MemoryInterfacing.rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
+            POPBC: function() { this._r.c=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.b=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
+            POPDE: function() { this._r.e=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.d=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
+            POPHL: function() { this._r.l=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.h=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
+            POPAF: function() { this._r.f=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.a=MemoryInterfacing.instance().rb(this._r.sp); this._r.sp++; this._r.m=3; this._r.t=12; },
 
             /*--- Jump ---*/
-            JPnn: function() { this._r.pc = MemoryInterfacing.rw(this._r.pc); this._r.m=3; this._r.t=12; },
+            JPnn: function() { this._r.pc = MemoryInterfacing.instance().rw(this._r.pc); this._r.m=3; this._r.t=12; },
             JPHL: function() { this._r.pc=this._r.hl; this._r.m=1; this._r.t=4; },
-            JPNZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x00) { this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
-            JPZnn: function()  { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x80) { this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
-            JPNCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x00) { this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
-            JPCnn: function()  { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x10) { this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
+            JPNZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x00) { this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
+            JPZnn: function()  { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x80) { this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
+            JPNCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x00) { this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
+            JPCnn: function()  { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x10) { this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m++; this._r.t+=4; } else this._r.pc+=2; },
 
-            JRn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; this._r.pc+=i; this._r.m++; this._r.t+=4; },
-            JRNZn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x80)==0x00) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
-            JRZn: function()  { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x80)==0x80) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
-            JRNCn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x10)==0x00) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
-            JRCn: function()  { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x10)==0x10) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
+            JRn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; this._r.pc+=i; this._r.m++; this._r.t+=4; },
+            JRNZn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x80)==0x00) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
+            JRZn: function()  { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x80)==0x80) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
+            JRNCn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x10)==0x00) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
+            JRCn: function()  { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; if((this._r.f&0x10)==0x10) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
 
-            DJNZn: function() { let i=MemoryInterfacing.rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; this._r.b--; if(this._r.b) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
+            DJNZn: function() { let i=MemoryInterfacing.instance().rb(this._r.pc); if(i>127) i=-((~i+1)&255); this._r.pc++; this._r.m=2; this._r.t=8; this._r.b--; if(this._r.b) { this._r.pc+=i; this._r.m++; this._r.t+=4; } },
 
-            CALLnn: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m=5; this._r.t=20; },
-            CALLNZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x00) { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
-            CALLZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x80) { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
-            CALLNCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x00) { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
-            CALLCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x10) { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
+            CALLnn: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m=5; this._r.t=20; },
+            CALLNZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x00) { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
+            CALLZnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x80)==0x80) { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
+            CALLNCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x00) { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
+            CALLCnn: function() { this._r.m=3; this._r.t=12; if((this._r.f&0x10)==0x10) { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc+2); this._r.pc=MemoryInterfacing.instance().rw(this._r.pc); this._r.m+=2; this._r.t+=8; } else this._r.pc+=2; },
 
-            RET: function() { this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m=3; this._r.t=12; },
-            RETI: function() { this._r.ime=1; this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m=3; this._r.t=12; },
-            RETNZ: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x80)==0x00) { this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
-            RETZ: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x80)==0x80) { this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
-            RETNC: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x10)==0x00) { this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
-            RETC: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x10)==0x10) { this._r.pc=MemoryInterfacing.rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
+            RET: function() { this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m=3; this._r.t=12; },
+            RETI: function() { this._r.ime=1; this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m=3; this._r.t=12; },
+            RETNZ: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x80)==0x00) { this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
+            RETZ: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x80)==0x80) { this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
+            RETNC: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x10)==0x00) { this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
+            RETC: function() { this._r.m=1; this._r.t=4; if((this._r.f&0x10)==0x10) { this._r.pc=MemoryInterfacing.instance().rw(this._r.sp); this._r.sp+=2; this._r.m+=2; this._r.t+=8; } },
 
-            RST00: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x00; this._r.m=3; this._r.t=12; },
-            RST08: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x08; this._r.m=3; this._r.t=12; },
-            RST10: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x10; this._r.m=3; this._r.t=12; },
-            RST18: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x18; this._r.m=3; this._r.t=12; },
-            RST20: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x20; this._r.m=3; this._r.t=12; },
-            RST28: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x28; this._r.m=3; this._r.t=12; },
-            RST30: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x30; this._r.m=3; this._r.t=12; },
-            RST38: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x38; this._r.m=3; this._r.t=12; },
-            RST40: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x40; this._r.m=3; this._r.t=12; },
-            RST48: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x48; this._r.m=3; this._r.t=12; },
-            RST50: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x50; this._r.m=3; this._r.t=12; },
-            RST58: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x58; this._r.m=3; this._r.t=12; },
-            RST60: function() { this._r.sp-=2; MemoryInterfacing.ww(this._r.sp,this._r.pc); this._r.pc=0x60; this._r.m=3; this._r.t=12; },
+            RST00: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x00; this._r.m=3; this._r.t=12; },
+            RST08: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x08; this._r.m=3; this._r.t=12; },
+            RST10: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x10; this._r.m=3; this._r.t=12; },
+            RST18: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x18; this._r.m=3; this._r.t=12; },
+            RST20: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x20; this._r.m=3; this._r.t=12; },
+            RST28: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x28; this._r.m=3; this._r.t=12; },
+            RST30: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x30; this._r.m=3; this._r.t=12; },
+            RST38: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x38; this._r.m=3; this._r.t=12; },
+            RST40: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x40; this._r.m=3; this._r.t=12; },
+            RST48: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x48; this._r.m=3; this._r.t=12; },
+            RST50: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x50; this._r.m=3; this._r.t=12; },
+            RST58: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x58; this._r.m=3; this._r.t=12; },
+            RST60: function() { this._r.sp-=2; MemoryInterfacing.instance().ww(this._r.sp,this._r.pc); this._r.pc=0x60; this._r.m=3; this._r.t=12; },
 
             NOP: function() { this._r.m=1; this._r.t=4; },
             HALT: function() { this._halt=1; this._r.m=1; this._r.t=4; },
@@ -1037,7 +1037,7 @@ class CPU {
             /*--- Helper functions ---*/
             fz: function(i,as) { this._r.f=0; if(!(i&255)) this._r.f|=128; this._r.f|=as?0x40:0; },
             MAPcb: function() {
-              let i=MemoryInterfacing.rb(this._r.pc); this._r.pc++;
+              let i=MemoryInterfacing.instance().rb(this._r.pc); this._r.pc++;
               this._r.pc &= 65535;
               if(this._cbmap[i]) this._cbmap[i]();
               else alert(i);
@@ -1050,6 +1050,10 @@ class CPU {
               this._stop=1;
             }
         }
+    }
+
+    static instance = () => {
+        return this;
     }
 
     reset = () =>
@@ -1069,19 +1073,24 @@ class CPU {
 
     exec = () => {
         this._r.r = (this._r.r+1) & 127;
-        this._map[MemoryInterfacing.rb(this._r.pc++)]();
+        this._map[MemoryInterfacing.instance().rb(this._r.pc++)]();
         this._r.pc &= 65535;
         this._clock.m += this._r.m; this._clock.t += this._r.t;
-        if(MemoryInterfacing._inbios && this._r.pc == 0x0100) MemoryInterfacing._inbios=0;
+        if(MemoryInterfacing.instance()._inbios && this._r.pc == 0x0100) MemoryInterfacing.instance()._inbios=0;
     }
 
     dispatcher = () =>
     {
-        let op = MemoryInterfacing.rb(this._r.pc++);        // Fetch instruction
-        this._map[op]();                                    // Dispatch
-        this._r.pc &= 65535;                                // Mask PC to 16 bits
-        this._clock.m += this._r.m;                         // Add time to CPU clock
-        this._clock.t += this._r.t;
+        while (true)
+        {
+            let op = MemoryInterfacing.instance().rb(this._r.pc++);        // Fetch instruction
+            this._map[op]();                                    // Dispatch
+            this._r.pc &= 65535;                                // Mask PC to 16 bits
+            this._clock.m += this._r.m;                         // Add time to CPU clock
+            this._clock.t += this._r.t;
+
+            GPU.instance().step();
+        }
     }
 }
 
