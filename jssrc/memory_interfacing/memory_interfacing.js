@@ -1,3 +1,6 @@
+import CPU from '../cpu/cpu';
+import GPU from '../GPU/gpu';
+
 class MemoryInterfacing {
 
     constructor() {
@@ -74,7 +77,7 @@ class MemoryInterfacing {
             // GRAPHIC VRAM (8k)
             case 0x8000:
             case 0x9000:
-                return this._vram[addr & 0x1FFF];
+                return GPU.instance()._vram[addr & 0x1FFF];
 
             // EXTERNAL RAM (8k)
             case 0xA000:
@@ -124,8 +127,13 @@ class MemoryInterfacing {
                         if (addr > 0xFF80)
                             return this._zram[addr & 0x7F];
                         else {
-                            // I/O control handling
-                            // currently unhandle
+                            switch (addr & 0x00F0) {
+                                case 0x40:
+                                case 0x50:
+                                case 0x60:
+                                case 0x70:
+                                    return GPU.instance().rb(addr);
+                            }
                             return 0;
                         }
                 }
@@ -134,7 +142,7 @@ class MemoryInterfacing {
 
     rw = (addr) => {
         // Read 16-bit word from given address
-        this._rb(addr) + (this._rb(addr + 1) << 8);
+        return this._rb(addr) + (this._rb(addr + 1) << 8);
     }
 
     wb = (addr, value) => {
@@ -154,8 +162,8 @@ class MemoryInterfacing {
                 break;
             case 0x8000:
             case 0x9000:
-                this._vram[addr & 0x1FFF] = value;
-                GPU.instance().updatetile(addr, val);
+                GPU.instance()._vram[addr & 0x1FFF] = value;
+                GPU.instance().updatetile(addr, value);
                 break;
 
             // EXTERNAL RAM (8k)
@@ -202,7 +210,7 @@ class MemoryInterfacing {
                     case 0xE00:
                         if (addr < 0xFEA0)
                             GPU.instance()._oam[addr & 0xFF] = value;
-                        GPU.instance().updateoam(addr, val);
+                        GPU.instance().updateoam(addr, value);
                         break;
 
                     // ZERO-PAGE
@@ -210,8 +218,13 @@ class MemoryInterfacing {
                         if (addr > 0xFF80)
                             this._zram[addr & 0x7F] = value;
                         else {
-                            // I/O control handling
-                            // currently unhandle
+                            switch (addr & 0x00F0) {
+                                case 0x40:
+                                case 0x50:
+                                case 0x60:
+                                case 0x70:
+                                    return GPU.instance().wb(addr, value);
+                            }
                         }
                         break;
                 }
@@ -227,8 +240,13 @@ class MemoryInterfacing {
 
     load = (file) => {
         let bin = new FileReader();
-        this._rom = bin.readAsBinaryString(file);
+        bin.addEventListener("loadend", () => {
+            console.log(bin.result);
+        });
+        this._rom = bin.readAsBinaryString(new File([], file));
     }
 }
 
-export default MemoryInterfacing;
+const instance = new MemoryInterfacing();
+
+export default instance;
