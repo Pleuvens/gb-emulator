@@ -52,7 +52,7 @@ class GPU {
     }
 
     step = () => {
-        this._modeclock += CPU.instance()._r.t;
+        this._modeclock += CPU._r.t;
 
         switch (this._mode) {
             // OAM read mode, scanline active
