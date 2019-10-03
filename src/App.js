@@ -18,7 +18,7 @@ class App extends Component {
         MemoryInterfacing.reset();
         CPU.reset();
 
-        MemoryInterfacing.load('./test.gb');
+        MemoryInterfacing.load('./opus5.gb');
     }
 
     frame = () => {

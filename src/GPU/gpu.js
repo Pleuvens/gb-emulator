@@ -38,15 +38,24 @@ class GPU {
         this._modeclock = 0;
         this._line = 0;
 
+        this._pal = [
+            [255, 255, 255],
+            [192, 192, 192],
+            [96, 96, 96],
+            [0, 0, 0]
+        ];
+
         this._vram = [];
+        for (let i = 0; i < 8192; i++)
+            this._vram.push(0);
 
         this._tileset = [];
-        for (let i = 0; i < 384; i++)
+        for (let i = 0; i < 512; i++)
         {
-            this._tileset[i] = [];
+            this._tileset.push([]);
             for (let j = 0; j < 8; j++)
             {
-                this._tileset[i][j] = [0, 0, 0, 0, 0, 0, 0, 0];
+                this._tileset[i].push([0, 0, 0, 0, 0, 0, 0, 0]);
             }
         }
     }
